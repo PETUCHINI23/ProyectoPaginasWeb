@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinita - Estudio Fotográfico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #D9B78E; 
+            padding: 15px 0;
+        }
+        .logo img {
+            max-height: 40px;
+        }
+        .nav-link {
+            color: white !important; 
+            margin: 0 10px;
+            font-weight: 500;
+        }
+        .btn-contact {
+            background-color: #FFC14F; 
+            color: white;
+            border-radius: 25px;
+            padding: 8px 20px;
+            font-weight: 500;
+        }
+        .dropdown-toggle::after {
+            vertical-align: middle;
+        }
+        .hero-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero-title {
+            color: #D9A971;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .hero-subtitle {
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .category-btn {
+            background-color: #F2B46D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            margin: 5px;
+            font-size: 14px;
+        }
+        .gallery {
+            margin-top: 30px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .reviews-section {
+            background-color: #f9f5f0;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .reviews-title {
+            color: #D9A971;
+            margin-bottom: 30px;
+        }
+        .review-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        .reviewer-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .stars {
+            color: #FFD700;
+            margin: 10px 0;
+        }
+        .faq-section {
+            background-color: #D9A971;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .faq-title {
+            color: white;
+            margin-bottom: 30px;
+        }
+        .faq-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: left;
+            position: relative;
+        }
+        .faq-card:after {
+            content: "+";
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+        .contact-section {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .contact-icon {
+            font-size: 24px;
+            background-color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        .contact-form input, .contact-form textarea {
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            margin-bottom: 15px;
+        }
+        .submit-btn {
+            background-color: white;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 20px;
+            float: right;
+        }
+        .footer {
+            background-color: #f9f5f0;
+            padding: 60px 0 30px;
+        }
+        .footer-logo img {
+            max-height: 40px;
+            margin-bottom: 20px;
+        }
+        .footer-links h5 {
+            color: #D9A971;
+            margin-bottom: 20px;
+        }
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+        }
+        .newsletter-btn {
+            background-color: #D9A971;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            width: 100%;
+        }
+        .copyright {
+            text-align: center;
+            color: #666;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand logo" href="#">
+                <img src="/fotos/logoinfinitamarillo.png" alt="Infinita Logo">
+                
+            </a>
+            <div class="d-flex align-items-center">
+                <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#">Sesiones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-contact" href="#">Hablemos Por WhatsApp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+ 
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Así se ven nuestras fotos</h1>
+            <p class="hero-subtitle">Realizamos diferentes tipos de sesiones, especializadas en las necesidades de nuestros clientes.</p>
+            
+            <div class="category-filters">
+                <button class="category-btn">Todas</button>
+                <button class="category-btn">Estudio</button>
+                <button class="category-btn">Eventos Empresariales</button>
+                <button class="category-btn">Eventos Sociales</button>
+                <button class="category-btn">Exteriores</button>
+                <button class="category-btn">Inmuebles</button>
+                <button class="category-btn">Marca personal</button>
+                <button class="category-btn">Navidad</button>
+                <button class="category-btn">Parejas</button>
+                <button class="category-btn">Producto</button>
+            </div>
+            
+            <div class="row gallery mt-5">
+                <div class="col-md-3">
+                    <img src="/fotos/yocalacox2.png" alt="Foto de modelo">
+                </div>
+                <div class="col-md-3">
+                    <img src="/fotos/GotasDeFuego.png" alt="Foto de familia">
+                </div>
+                <div class="col-md-3">
+                    <img src="/fotos/MiNahual.png" alt="Foto de modelo">
+                </div>
+                <div class="col-md-3">
+                    <img src="/fotos/esverdecito.png" alt="Foto de pareja">
+                </div>
+                <div class="col-md-4">
+                    <img src="/fotos/phineas.jpg" alt="Foto de navidad familiar">
+                </div>
+                <div class="col-md-2">
+                    <img src="/fotos/Dany.jpeg" alt="Foto corporativa">
+                </div>
+                <div class="col-md-4">
+                    <img src="/fotos/Davis.jpeg" alt="Foto de inmueble">
+                </div>
+                <div class="col-md-2">
+                    <img src="fotos/anochecer.png" alt="Foto corporativa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="reviews-title">¿Qué dicen nuestros clientes?</h2>
+            <div class="text-center mb-4">
+                <h4>Excelente</h4>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>4.9 de 5 en Google</p>
+                <img src="/fotos/googlelogo.png" alt="Google Logo">
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="review-card">
+                        <div class="d-flex align-items-center">
+                            <img src="/fotos/Davis.jpeg" class="reviewer-img" alt="Cliente">
+                            <div class="ms-3 text-start">
+                                <h6>María Gómez</h6>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-start mt-3">Recomiendo ampliamente acudir a este lugar si lo que buscas es un servicio profesional y atención de primera...</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="review-card">
+                        <div class="d-flex align-items-center">
+                            <img src="fotos/sonoio.png" class="reviewer-img" alt="Cliente">
+                            <div class="ms-3 text-start">
+                                <h6>Alex Chávez</h6>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-start mt-3">Excelente lugar, son muy amables, muy buen servicio, cálidos en su trato y me ofrecieron opciones que...</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="review-card">
+                        <div class="d-flex align-items-center">
+                            <img src="/fotos/DanyMiNovia.jpg" class="reviewer-img" alt="Cliente">
+                            <div class="ms-3 text-start">
+                                <h6>Juan Fernández</h6>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-start mt-3">Gran trabajo y compromiso de parte de todo el equipo, lo recomiendo ampliamente...</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="review-card">
+                        <div class="d-flex align-items-center">
+                            <img src="/fotos/esverdecito.png" class="reviewer-img" alt="Cliente">
+                            <div class="ms-3 text-start">
+                                <h6>Daniela Morales</h6>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-start mt-3">Una extraordinaria experiencia, muy profesional y responsable. Desde la primera comunicación fueron muy...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Preguntas frecuentes</h2>
+            <p class="text-white mb-5">Cuéntanos tus dudas mejor</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="faq-card">
+                        ¿Cuánto tiempo dura mi Sesión de fotos?
+                    </div>
+                    <div class="faq-card">
+                        ¿Como necesito prepararme para mi Sesión de fotos?
+                    </div>
+                    <div class="faq-card">
+                        ¿Puedo llevar cambios de ropa para mi Sesión de fotos?
+                    </div>
+                    <div class="faq-card">
+                        ¿Qué forma de pago aceptan?
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="faq-card">
+                        ¿Cuanto cuesta una Sesión de fotos?
+                    </div>
+                    <div class="faq-card">
+                        ¿Entregan todas las fotos?
+                    </div>
+                    <div class="faq-card">
+                        ¿Cuanto tardan en entregar las fotos?
+                    </div>
+                    <div class="faq-card">
+                        ¿Entregan Sesiones individuales de grupo?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="mb-4">Contáctanos</h2>
+            <p class="mb-5">Recibimos su nueva información</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h5>Contáctanos por WhatsApp</h5>
+                    <p>+52 XXX XXX XXXX</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="contact-icon">
+                        <i class="far fa-envelope"></i>
+                    </div>
+                    <h5>Escríbenos por correo</h5>
+                    <p>info@infinita.com</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h5>Encuéntranos en</h5>
+                    <p>Nuestras oficinas en México, D.F.</p>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-6 offset-md-3">
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Nombre">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
+                        <button type="submit" class="submit-btn">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-logo">
+                        <img src="/fotos/infinitalogoblanco.png" alt="Infinita Logo">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-links">
+                        <h5>Enlaces Interesantes</h5>
+                        <ul>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Sesiones</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Portafolio</a></li>
+                            <li><a href="#">Preguntas Frecuentes</a></li>
+                            <li><a href="#">Enlaces externos a otros sitios</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-newsletter">
+                        <h5>No te pierdas nuestras promociones</h5>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <button class="newsletter-btn">SUSCRIBIRSE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© Copyright. Servicios Audiovisuales</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
