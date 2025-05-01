@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinita - Blog de Fotografía</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .navbar {
+            padding: 15px 0;
+            background-color: #e6b778;
+        }
+        .logo {
+            height: 30px;
+        }
+        .nav-link {
+            margin-left: 15px;
+            font-size: 14px;
+            font-weight: 500;
+            color: white !important;
+        }
+        .btn-whatsapp {
+            background-color: #FFCC4D;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+        .btn-whatsapp:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .navbar-toggler {
+            border: none;
+            background: transparent;
+        }
+        .navbar-toggler-icon {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            position: relative;
+        }
+        .navbar-toggler-icon:before,
+        .navbar-toggler-icon:after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            left: 0;
+        }
+        .navbar-toggler-icon:before {
+            top: -8px;
+        }
+        .navbar-toggler-icon:after {
+            top: 8px;
+        }
+        
+       
+        .blog-header {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .blog-title {
+            color: #d3a97e;
+            font-weight: 400;
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .card {
+            border: none;
+            border-radius: 0;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .card-img-container {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-img-overlay {
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        .card-img-overlay h5 {
+            color: white;
+            font-size: 22px;
+            font-weight: 500;
+        }
+        .card-body {
+            padding: 20px 0;
+            font-size: 14px;
+            color: #777;
+        }
+        .card-title {
+            color: #d3a97e;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        .footer {
+            background-color: white;
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #777;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .footer-title {
+            color: #777;
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        .newsletter-form input {
+            border-radius: 0;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+        }
+        .btn-subscribe {
+            background-color: #e6b778;
+            border: none;
+            border-radius: 0;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+       
+        .main-menu {
+            display: flex;
+            align-items: center;
+        }
+        .main-menu .nav-item {
+            margin: 0 10px;
+        }
+        .dropdown-menu {
+            background-color: #e6b778;
+            border: none;
+            border-radius: 0;
+        }
+        .dropdown-item {
+            color: white;
+            font-size: 14px;
+        }
+        .dropdown-item:hover {
+            background-color: #d3a97e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/fotos/logoinfinitamarillo.png" alt="Infinita" class="logo">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sesiones">Sesiones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portafolio.html">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonios">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+                <a class="btn btn-whatsapp ms-3" href="#">Hablemos por WhatsApp</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="container">
+        <div class="blog-header">
+            <h1 class="blog-title">Nuestro Blog De Fotografía</h1>
+        </div>
+
+        
+        <div class="row">
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="fotos/yocalacox2.png" alt="Foto Estudio" class="card-img-top">
+                        <div class="card-img-overlay">
+                            <h5>Foto Estudio Cerca de Mí</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">¿Buscando un estudio de fotografía cerca de ti?</h5>
+                        <p>¿Buscas un estudio de fotografía cerca de ti? Descubre la Excelencia en Fotografía. Cerca de ti con Infinita en la Ciudad de México. Más que un estudio, una gran experiencia.</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="/fotos/esverdecito.png" alt="Mitos CV" class="card-img-top">
+                        <div class="card-img-overlay">
+                            <h5>Mitos de Tu Foto de CV</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Cómo debe ser la foto del CV?</h5>
+                        <p>Mitos y realidades de tu foto de CV. En la era digital, la búsqueda de empleo se ha vuelto más competitiva que nunca, y la primera impresión que dejas a través de tu foto puede ser determinante.</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="/fotos/Davis.jpeg" alt="Claves CV" class="card-img-top">
+                        <div class="card-img-overlay">
+                            <h5>Clave Para Un CV Impresionante</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">7 Tips: La Clave para un CV y Perfil Profesional Impresionantes</h5>
+                        <p>7 Tips: La Clave para un CV y Perfil Profesional Impresionante. En el competitivo mundo laboral actual, la primera impresión cuenta más que nunca.</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="/fotos/GotasDeFuego.png" alt="Fotos navideñas" class="card-img-top">
+                        <div class="card-img-overlay">
+                            <h5>¿Por qué hacerte fotos navideñas?</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">¿Quieres ser fotógrafo? Pros y Contras de Esta gran vocación</h5>
+                        <p>Hazte una Sesión De Fotos Navideña en Nuestro Estudio Profesional. La temporada navideña está a la vuelta de la esquina, y ¿qué mejor manera de celebrar y preservar estos momentos especiales?</p>
+                    </div>
+                </div>
+            </div>
+            
+      
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="fotos/yocalacomuajajaja.png" alt="Sesión aire libre" class="card-img-top">
+                        <div class="card-img-overlay">
+                            <h5>Tips para tu sesión al aire libre</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">¿Cómo hacerte una sesión de fotos al aire libre?</h5>
+                        <p>Consejos Para Una Sesión de Fotos Al Aire Libre. Increíble ¡7 Tips! Las sesiones fotográficas al aire libre ofrecen un telón de fondo natural y una luz única que puede realzar la belleza de tus fotos.</p>
+                    </div>
+                </div>
+            </div>
+            
+        
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="fotos/MiNahual.png" alt="Fotos actores" class="card-img-top">
+                        <div class="card-img-overlay">
+                            <h5>Fotos para actores y actrices</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Fotos para actores y actrices</h5>
+                        <p>Fotografía Para Actores y Actrices. Las sesiones de fotografía para actores son una herramienta fundamental para impulsar tu carrera en la industria del entretenimiento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="/fotos/infinitalogoblanco.png" alt="Infinita" class="footer-logo">
+                    <p class="text-muted small">SESIONES DE FOTOGRAFÍA</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Algunos links relevantes</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Sesiones</a></li>
+                        <li><a href="#">Portafolio</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Visita nuestro aviso de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">No te pierdas nuestras promociones</h5>
+                    <form class="newsletter-form">
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <button type="submit" class="btn btn-subscribe">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <p class="small text-muted">© 2025 Infinita | Todos los derechos reservados</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

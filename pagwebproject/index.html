@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somos Infinita - Estudio Fotográfico</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+       
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+        }
+        
+        /* variables  pafa agilizar todo :)*/
+        :root {
+            --primary-color: #E2AD6B;
+            --secondary-color: #CC7D2F;
+            --accent-color: #DA8B4A;
+            --background-color: #F7E8D8;
+            --dark-color: #6D4C37;
+            --light-color: #FFF9F2;
+            --x-color: #f0dddd;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-outline-primary {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+       
+        .navbar {
+            background-color: #d3a97e;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+            padding: 10px 0;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+        }
+        
+        .nav-link {
+            color: var(--light-color) !important;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+        
+        .nav-link:hover {
+            color: var(--x-color) !important;
+        }
+        
+        
+        .hero-banner {
+            background-color: #B25D31;
+            color: white;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            padding: 80px 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-img {
+            height: 100%;
+            object-fit: cover;
+        }
+        
+      
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            color: var(--dark-color);
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .section-title.left-aligned {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .custom-subtitle {
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        
+        .video-presentation {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .video-play-button {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .video-play-button i {
+            font-size: 30px;
+            color: white;
+        }
+
+        
+        .stats-container {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat-item {
+            text-align: center;
+            border-right: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-text {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+       
+        .service-card {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            background-color: white;
+            padding: 20px;
+        }
+
+        .service-content h4 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+  
+        .team-section {
+            background-color: white;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 15px;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-name {
+            color: var(--dark-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .team-position {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .benefits-section {
+            background-color: var(--background-color);
+        }
+
+        .benefit-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .benefit-icon i {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .benefit-content h4 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .benefit-content p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+     
+        .testimonials-section {
+            background-color: white;
+        }
+
+        .testimonial-stars {
+            color: gold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .testimonial-source {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-source img {
+            height: 30px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .testimonial-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-author h5 {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--dark-color);
+        }
+
+        .testimonial-author-stars {
+            color: gold;
+            font-size: 0.8rem;
+        }
+
+        .testimonial-text {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        
+        .faq-section {
+            background-color: var(--background-color);
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            background-color: transparent;
+        }
+
+        .accordion-button {
+            background-color: white;
+            color: var(--dark-color);
+            font-weight: 600;
+            box-shadow: none;
+            border-radius: 5px !important;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .accordion-body {
+            background-color: white;
+            border-top: none;
+            padding: 20px;
+        }
+
+        
+        .contact-section {
+            background-color: black;
+            color: white;
+            padding: 60px 0;
+        }
+
+        .contact-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-subtitle {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .contact-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .contact-icon i {
+            color: white;
+            font-size: 20px;
+        }
+
+        .contact-text {
+            font-size: 0.9rem;
+        }
+
+        .contact-form .form-control {
+            background-color: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .contact-form .form-control::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .contact-form textarea.form-control {
+            min-height: 120px;
+        }
+
+        
+        footer {
+            background-color: #111;
+            color: rgba(255,255,255,0.7);
+            padding: 60px 0 20px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+        }
+
+        .footer-links h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-link {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            color: var(--primary-color);
+        }
+
+        .newsletter-form {
+            margin-top: 20px;
+        }
+
+        .newsletter-form .form-control {
+            background-color: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 30px;
+        }
+
+        .newsletter-btn {
+            background-color: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 10px 0;
+            border-radius: 30px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .newsletter-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        
+        @media (max-width: 992px) {
+            .hero-content {
+                padding: 60px 20px;
+                text-align: center;
+            }
+            
+            .hero-content p {
+                margin: 0 auto 30px;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+            
+            .team-member {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .gallery-item {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content {
+                padding: 40px 20px;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .video-play-button {
+                width: 60px;
+                height: 60px;
+            }
+
+            .video-play-button i {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="/fotos/logoinfinitamarillo.png" alt="Infinita Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Boda.html">Sesiones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portafolio.html">Portafolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonios">Testimonios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+    
+    <section class="hero-banner">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <p class="mb-2">estudio boutique de fotografía en CDMX</p>
+                        <h1>Sesión de fotografías</h1>
+                        <p>Nuestras sesiones te permiten tener fotografías profesionales para uso personal o empresarial, en estudio o exterior. Sabemos que cada sesión es única así que nos adaptamos a ti y a tu estilo.</p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-lg-start justify-content-center">
+                            <a href="#contacto" class="btn btn-primary">Agendar una sesión</a>
+                            <a href="#sesiones" class="btn btn-outline-primary">Ver paquetes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/fotos/fampe.png" alt="Familia en sesión fotográfica" class="img-fluid hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<section class="section">
+    <div class="container">
+        <h2 class="section-title text-center">¿Buscas una sesión de fotografías en CDMX?</h2>
+        <p class="text-center mb-5">
+            Somos un equipo de fotógrafos profesionales listos para ti, realizamos sesiones de fotografía en estudio con fondos profesionales o en exterior. Adaptamos nuestro estilo a cada proyecto.
+        </p>
+
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
+                <div class="video-presentation position-relative w-100">
+                    <video class="img-fluid w-100" autoplay muted loop playsinline>
+                        <source src="/fotos/INF_Video_A_Intro_Subs-1.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                    <div class="video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white text-center">
+                        <div class="video-play-button mb-3">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <h3>HOLA! SOMOS INFINITA.</h3>
+                        <p>Estudio boutique fotográfico</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <p>
+                    Estamos aquí para fotografiarte: nuestro objetivo es encontrarnos juntos para crear imágenes bonitas para tus redes sociales, pero también para tu empresa. Si prefieres fotografías naturales o dirigidas, te cubrimos.
+                </p>
+                <p>Cuéntanos de tu proyecto y genera tu cotización en línea.</p>
+                <a href="#contacto" class="btn btn-primary mt-3 align-self-start">Reserva ahora tu sesión</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+          
+            <div class="stats-container">
+                <div class="row">
+                    <div class="col-md-3 stat-item">
+                        <div class="stat-number">+300</div>
+                        <div class="stat-text">Sesiones completadas</div>
+                    </div>
+                    <div class="col-md-3 stat-item">
+                        <div class="stat-number">4.9★</div>
+                        <div class="stat-text">Calificación promedio en Google</div>
+                    </div>
+                    <div class="col-md-3 stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-text">Satisfacción garantizada</div>
+                    </div>
+                    <div class="col-md-3 stat-item">
+                        <div class="stat-number">+10</div>
+                        <div class="stat-text">Años de experiencia</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="sesiones" class="section">
+        <div class="container">
+            <h2 class="section-title">¿Qué sesión de fotografía estás buscando?</h2>
+            <p class="text-center mb-5">Ofrecemos servicios para cualquier tipo de fotografías - contamos con más de 10 años de experiencia</p>
+            
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/fotos/yocalacomuajajaja.png" alt="Sesión individual">
+                        </div>
+                        <div class="service-content">
+                            <h4>Sesiones de estilo libre</h4>
+                            <p>Fotos personales naturales y espontáneas para redes sociales, recuerdos o uso personal.</p>
+                            <a href="#" class="btn btn-sm btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/fotos/AIRELIBRE.jpg" alt="Sesión en exteriores">
+                        </div>
+                        <div class="service-content">
+                            <h4>Sesiones en exteriores</h4>
+                            <p>Fotografías en locaciones exteriores con luz natural, ideal para familias y parejas.</p>
+                            <a href="#" class="btn btn-sm btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/fotos/sesiones-empresas.jpg" alt="Sesión para empresas">
+                        </div>
+                        <div class="service-content">
+                            <h4>Sesiones para empresa</h4>
+                            <p>Retratos corporativos profesionales para tu perfil laboral o sitio web empresarial.</p>
+                            <a href="#" class="btn btn-sm btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/fotos/mamberroielegante.jpg" alt="Catálogo para curriculum">
+                        </div>
+                        <div class="service-content">
+                            <h4>Catálogo para Curriculum</h4>
+                            <p>Fotografías profesionales para modelos y actores que necesitan actualizar su portafolio.</p>
+                            <a href="#" class="btn btn-sm btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/fotos/perrocumple.jpg" alt="Sesiones para eventos especiales">
+                        </div>
+                        <div class="service-content">
+                            <h4>Sesiones para eventos especiales</h4>
+                            <p>Eventos familiares, cumpleaños, aniversarios, y todo tipo de celebraciones importantes.</p>
+                            <a href="#" class="btn btn-sm btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/fotos/mochilamarilla.jpg" alt="Sesiones para productos">
+                        </div>
+                        <div class="service-content">
+                            <h4>Sesiones para productos (e-commerce)</h4>
+                            <p>Fotografía de productos para tiendas online, catálogos y publicidad digital.</p>
+                            <a href="#" class="btn btn-sm btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/fotos/Quinceañhebría.jpg" alt="Sesiones de quinceañera">
+                        </div>
+                        <div class="service-content">
+                            <h4>Sesiones de quinceañera</h4>
+                            <p>Sesiones fotográficas especiales para este momento único en la vida de toda jovencita.</p>
+                            <a href="#" class="btn btn-sm btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/fotos/boda.png" alt="Sesiones de bodas">
+                        </div>
+                        <div class="service-content">
+                            <h4>Sesiones de bodas</h4>
+                            <p>Captamos los momentos más especiales de tu boda con un estilo único y personalizado.</p>
+                            <a href="#" class="btn btn-sm btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#contacto" class="btn btn-primary">Contáctanos por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+ 
+    <section id="equipo" class="section team-section">
+        <div class="container">
+            <h2 class="section-title">Nuestro equipo de fotógrafos</h2>
+            <p class="text-center mb-5">Nuestro equipo de fotógrafos está compuesto por artistas apasionados y experimentados con la experiencia visual. Cada miembro de nuestro equipo posee una amplia gama de habilidades profesionales, respaldadas por años de experiencia en el campo de la fotografía. Estamos listos de acompañarte en tu sesión de fotos y ayudarte con tus imágenes.</p>
+            
+            <div class="team-container">
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="/fotos/sonoio.png" alt="Fotógrafo">
+                    </div>
+                    <h4 class="team-name">Joaquín<br>García</h4>
+                    <p class="team-position">Director</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="/fotos/MiNahual.png" alt="Fotógrafo">
+                    </div>
+                    <h4 class="team-name">Javier<br>Hernández</h4>
+                    <p class="team-position">Fotógrafo</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="/fotos/Davis.jpeg" alt="Fotógrafo">
+                    </div>
+                    <h4 class="team-name">Elena<br>Sánchez</h4>
+                    <p class="team-position">Directora</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="/fotos/phineas.jpg" alt="Fotógrafo">
+                    </div>
+                    <h4 class="team-name">Cristina<br>López</h4>
+                    <p class="team-position">Editora</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="/fotos/mamberroielegante.jpg" alt="Fotógrafo">
+                    </div>
+                    <h4 class="team-name">Mamberroi<br>Patlán</h4>
+                    <p class="team-position">Aguador</p>
+                </div>
+                        
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section benefits-section">
+        <div class="container">
+            <h2 class="section-title">En nuestra sesión de fotografías cuentas con estos beneficios</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Paquete de 40-60 fotos</h4>
+                            <p>Recibe una selección cuidadosa de fotografías profesionales, editadas y retocadas para resaltar tu mejor versión.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Profesionalidad</h4>
+                            <p>Nuestros fotógrafos cuentan con años de experiencia garantizando resultados de calidad profesional que superarán tus expectativas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Facilidades de pago</h4>
+                            <p>Ofrecemos métodos de pago flexible: tarjeta, efectivo, transferencia y posibilidad de pagar hasta en 3 meses sin intereses con tarjetas participantes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Asesoría personalizada</h4>
+                            <p>Recibe guía completa sobre vestuario, poses y estilos antes y durante la sesión para lograr los mejores resultados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Sesiones convenientes</h4>
+                            <p>Sesiones de duración adecuada para capturar todas las tomas necesarias sin prisas pero respetando tu tiempo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Experiencia creativa</h4>
+                            <p>Nuestro enfoque artístico garantiza imágenes únicas que capturan tu personalidad y logran la mejor representación visual.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="section">
+        <div class="container">
+            <h2 class="section-title">Así se ven nuestras sesiones de fotografías</h2>
+            
+            <div class="gallery-container">
+                
+                <div class="gallery-item">
+                    <img src="/fotos/yocalacomuajajaja.png" alt="Fotografía de sesión">
+                </div>
+                <div class="gallery-item">
+                    <img src="/fotos/esverdecito.png" alt="Fotografía de sesión">
+                </div>
+                <div class="gallery-item">
+                    <img src="fotos/yocalacox2.png" alt="Fotografía de sesión">
+                </div>
+                <div class="gallery-item">
+                    <img src="/fotos/anochecer.png" alt="Fotografía de sesión">
+                </div>
+                <div class="gallery-item">
+                    <img src="/fotos/calacorojo.png" alt="Fotografía de sesión">
+                </div>
+                <div class="gallery-item">
+                    <img src="/fotos/GotasDeFuego.png" alt="Fotografía de sesión">
+                </div>
+                <div class="gallery-item">
+                    <img src="fotos/Dany.jpeg" alt="Fotografía de sesión">
+                </div>
+                <div class="gallery-item">
+                    <img src="fotos/DanyMiNovia.jpg" alt="Fotografía de sesión">
+                </div>
+                <div class="gallery-item">
+                    <img src="/fotos/gotica-egirl.png" alt="Fotografía de sesión">
+                </div>
+                <div class="gallery-item">
+                    <img src="fotos/yoMapache.jpg" alt="Fotografía de sesión">
+                </div>
+                <div class="gallery-item">
+                    <img src="fotos/Danielota.png" alt="Fotografía de sesión">
+                </div>
+                <div class="gallery-item">
+                    <img src="/fotos/CL.png" alt="Fotografía de sesión">
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="testimonios" class="section testimonials-section">
+        <div class="container">
+            <h2 class="section-title">¿Qué dicen nuestros clientes de nuestras sesiones de fotografía?</h2>
+            
+            <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="testimonial-source">
+                <p>Excelente</p>
+                <p>Basado en +50 reseñas</p>
+                <img src="/fotos/googlelogo.png" alt="Google Logo" style="max-width: 100px; height: auto;">
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-img">
+                                <img src="/fotos/MiNahual.png" alt="Cliente">
+                            </div>
+                            <div class="testimonial-author">
+                                <h5>Sonia Gómez</h5>
+                                <div class="testimonial-author-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Experiencia increíble, acudí a una sesión y me encantó el resultado. Las fotos quedaron muy naturales, con buena iluminación y desde la primera foto estuve a gusto con el equipo."</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-img">
+                                <img src="/fotos/phineas.jpg" alt="Cliente">
+                            </div>
+                            <div class="testimonial-author">
+                                <h5>Alex Rodríguez</h5>
+                                <div class="testimonial-author-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Muy buenas fotos, grandes servicios, concretos en los tiempos de entrega y muy eficaces. Los recomiendo así que no dudes y crea una sesión de opciones sin fin."</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-img">
+                                <img src="/fotos/Davis.jpeg" alt="Cliente">
+                            </div>
+                            <div class="testimonial-author">
+                                <h5>José David Fernández</h5>
+                                <div class="testimonial-author-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Gran trabajo y compromiso de parte de todo el equipo, lo recomiendo totalmente para sus fotos en ciudad."</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-img">
+                                <img src="/fotos/sonoio.png" alt="Cliente">
+                            </div>
+                            <div class="testimonial-author">
+                                <h5>Josefina Méndez</h5>
+                                <div class="testimonial-author-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Tuve una excelente experiencia, muy profesional y cómoda desde la cita hasta la sesión. Las fotos quedaron increíbles y me resolvieron mis necesidades de fotografías."</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-img">
+                                <img src="/fotos/mamberroielegante.jpg" alt="Cliente">
+                            </div>
+                            <div class="testimonial-author">
+                                <h5>Gabriela López</h5>
+                                <div class="testimonial-author-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Me encantó todo el concepto, los precios son muy accesibles, y logran capturar lo que buscas en el cliente de manera excepcional. Salí muy contenta de mi sesión de fotos."</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-img">
+                                <img src="/fotos/anochecer.png" alt="Cliente">
+                            </div>
+                            <div class="testimonial-author">
+                                <h5>Mónica Andrea Calderón</h5>
+                                <div class="testimonial-author-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Excelente servicio, muy profesional, muy puntual el equipo, del servicio y por encima de mi expectativa de fotos."</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-img">
+                                <img src="fotos/DanyMiNovia.jpg" alt="Cliente">
+                            </div>
+                            <div class="testimonial-author">
+                                <h5>Christian Segura</h5>
+                                <div class="testimonial-author-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Es mi primer servicio fotográfico y tengo que decirlo, perdieron por completo mi miedo a las fotos. Completamente recomendable."</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-img">
+                                <img src="/fotos/yocalacox2.png" alt="Cliente">
+                            </div>
+                            <div class="testimonial-author">
+                                <h5>Mir Israel</h5>
+                                <div class="testimonial-author-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Excelente servicio, comunicación constante y entrega rápida. Recomendable totalmente."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas frecuentes</h2>
+            <p class="text-center mb-5">Contáctanos para saber más</p>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="accordion" id="faqAccordion1">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    ¿Qué ropa llevar para mi sesión fotográfica?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Recomendamos traer al menos 2-3 cambios de ropa según tu estilo personal. Evita estampados muy llamativos y prefiere tonos sólidos que favorezcan tu tono de piel. Estaremos encantados de asesorarte personalmente.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    ¿Cuánto tiempo dura una sesión fotográfica?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Nuestras sesiones estándar duran aproximadamente 1-2 horas, dependiendo del paquete elegido y del tipo de fotografías. Este tiempo incluye los cambios de vestuario y las diferentes tomas.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    ¿Cuánto cuesta una sesión fotográfica?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Nuestros precios varían según el tipo de sesión, ubicación y necesidades específicas. Contamos con paquetes desde $1,500 MXN. Te invitamos a contactarnos para brindarte una cotización personalizada.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    ¿Dónde se realizan las sesiones fotográficas?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Realizamos sesiones tanto en nuestro estudio ubicado en la CDMX como en exteriores dentro del área metropolitana. Contamos con varios fondos en estudio y recomendaciones de locaciones en exterior según tu preferencia.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="accordion" id="faqAccordion2">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    ¿Cómo reservo mi sesión fotográfica?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Puedes agendar directamente a través de nuestro formulario de contacto, por WhatsApp o llamando al número telefónico. Se requiere un anticipo del 30% para confirmar tu reservación.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    ¿Cuánto tiempo tardan en entregar las fotografías?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    El tiempo de entrega es de 7 a 10 días hábiles después de tu sesión. Realizamos una cuidadosa selección y edición para garantizar la máxima calidad en cada imagen.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    ¿Qué métodos de pago aceptan?
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Aceptamos efectivo, transferencia bancaria, tarjetas de débito y crédito. También ofrecemos opciones de pago a meses sin intereses con tarjetas participantes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                    ¿Puedo llevar acompañantes a mi sesión?
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Sí, puedes traer un acompañante a tu sesión. En el caso de menores de edad, es obligatorio que asistan con un tutor. Para sesiones grupales o familiares, todos los participantes son bienvenidos.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <h2 class="contact-title">Contáctanos</h2>
+            <p class="contact-subtitle">Facilítanos para más información</p>
+            
+            <div class="row text-center mb-5">
+                <div class="col-md-4">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <p>Escríbenos por WhatsApp o llámanos</p>
+                            <p><strong>55 8888 9999</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <p>Escríbenos por email</p>
+                            <p><strong>hola@infinitafoto.com</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <p>Visítanos</p>
+                            <p><strong>San Pedro de los Pinos, Ciudad de México</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Nombre">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
+                        <div class="text-end mt-3">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="footer-logo">
+                        <img src="/api/placeholder/150/60" alt="Infinita Logo">
+                    </div>
+                    <p>Somos un estudio fotográfico dedicado a capturar los momentos más especiales de tu vida con un enfoque profesional y creativo.</p>
+                </div>
+                <div class="col-md-2 col-sm-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Enlaces Útiles</h5>
+                        <a href="#" class="footer-link">Inicio</a>
+                        <a href="#sesiones" class="footer-link">Sesiones</a>
+                        <a href="#equipo" class="footer-link">Equipo</a>
+                        <a href="#galeria" class="footer-link">Galería</a>
+                        <a href="#testimonios" class="footer-link">Testimonios</a>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Más enlaces</h5>
+                        <a href="#" class="footer-link">Blog</a>
+                        <a href="#" class="footer-link">Políticas de privacidad</a>
+                        <a href="#" class="footer-link">Términos y condiciones</a>
+                        <a href="#contacto" class="footer-link">Contacto</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-links">
+                        <h5>No te pierdas nuestras promociones</h5>
+                        <p>Suscríbete a nuestro newsletter y recibe ofertas exclusivas, consejos fotográficos y novedades.</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="form-control" placeholder="Email">
+                            <button type="submit" class="newsletter-btn">SUSCRIBIRME</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Infinita Fotografía. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
